@@ -30,6 +30,7 @@ view: multiline_sourcing {
 
   dimension: event_transaction_id {
     type: string
+    primary_key: yes
     sql: ${TABLE}.event_transactionId ;;
   }
 
@@ -88,7 +89,7 @@ view: multiline_sourcing {
 
   measure: count {
     type: count
-    drill_fields: []
+    drill_fields: [event_transaction_id]
   }
 }
 
